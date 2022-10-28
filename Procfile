@@ -1,0 +1,1 @@
+web: gunicorn hng9_stage.wsgi --log-file -
