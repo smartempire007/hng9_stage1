@@ -7,6 +7,7 @@ class Operators(enum.Enum):
     ADDITION = "addition"
     SUBTRACTION = "subtraction"
     MULTIPLICATION = "multiplication"
+    
 
 
 class MathematicSerializer(serializers.Serializer):

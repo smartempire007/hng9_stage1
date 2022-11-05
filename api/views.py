@@ -39,7 +39,7 @@ def mathFunc(request, format=None):
                     "result": Operations.multiplication(serialized_data.data['x'], serialized_data.data['y']),
                     "operation_type": 'multiplication'
                 },
-                return Response(data, status=status.HTTP_201_CREATED)
+                return Response(data, status=status.HTTP_200_OK)
         
             if serialized_data.data['operation_type'] == 'ADDITION':
                 data = {
@@ -47,7 +47,7 @@ def mathFunc(request, format=None):
                     "result": Operations.addition(serialized_data.data['x'], serialized_data.data['y']),
                     "operation_type": 'addition'
                 }
-                return Response(data, status=status.HTTP_201_CREATED)
+                return Response(data, status=status.HTTP_200_OK)
         
             if serialized_data.data['operation_type'] == 'SUBTRACTION':
                 data = {
@@ -55,9 +55,7 @@ def mathFunc(request, format=None):
                     "result": Operations.subtraction(serialized_data.data['x'], serialized_data.data['y']),
                     "operation_type": 'subtraction'
                 }
-                return Response(data, status=status.HTTP_201_CREATED)
+                return Response(data, status=status.HTTP_200_OK)
             serialized_data.save()
         return Response(data=serialized_data.errors, status=status.HTTP_400_BAD_REQUEST)
         
-        
-    
